@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import confetti from 'canvas-confetti';
 import API from '../api/axios';
 import Navbar from '../components/Navbar';
 
@@ -55,30 +54,6 @@ export default function MatchDetails() {
   };
 
 
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.6 },
-      colors: colors
-    });
-
-    setTimeout(() => {
-      confetti({
-        particleCount: 100,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors
-      });
-      confetti({
-        particleCount: 100,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors
-      });
-    }, 300);
-  };
 
   if (loading) {
     return (
@@ -274,3 +249,4 @@ export default function MatchDetails() {
       </div>
     </div>
   );
+}

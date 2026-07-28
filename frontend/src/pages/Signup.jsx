@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import API from '../api/axios';
 
-const DEPARTMENTS = [
-  'Select your country',
-  'Nigeria', 'Spain', 'England', 'France', 'Germany',
-  'Italy', 'Portugal', 'Brazil', 'Argentina', 'Netherlands',
-  'Belgium', 'United States', 'Japan', 'South Korea', 'Morocco',
-  'Senegal', 'Ghana', 'Ivory Coast', 'Egypt', 'South Africa'
-];
+
 
 export default function Signup() {
   const [form, setForm] = useState({

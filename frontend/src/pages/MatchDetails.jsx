@@ -12,7 +12,6 @@ export default function MatchDetails() {
   const [booking, setBooking] = useState(false);
   const [error, setError] = useState('');
   const [paymentSuccess, setPaymentSuccess] = useState(false);
-  const [ticket, setTicket] = useState(null);
   const { matchId } = useParams();
   const navigate = useNavigate();
 
@@ -55,8 +54,6 @@ export default function MatchDetails() {
     }
   };
 
-  const fireConfetti = () => {
-    const colors = ['#FFD700', '#FFC200', '#ffffff', '#000000'];
 
     confetti({
       particleCount: 150,
@@ -277,4 +274,3 @@ export default function MatchDetails() {
       </div>
     </div>
   );
-}

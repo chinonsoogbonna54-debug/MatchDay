@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar';
 
 export default function MyClubs() {
   const [clubs, setClubs] = useState([]);
-  const [matches, setMatches] = useState([]);
   const [favouriteClubId, setFavouriteClubId] = useState(null);
   const [starLoading, setStarLoading] = useState(null);
   const [selectedClub, setSelectedClub] = useState(null);

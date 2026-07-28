@@ -53,7 +53,7 @@ const fetchData = async () => {
   }
 };
   const setupSocket = () => {
-    const socket = io('http://127.0.0.1:5000');
+    const socket = io('https://matchday-2.onrender.com');
     socket.on('goal_scored', (data) => {
       setGoal(data);
     });

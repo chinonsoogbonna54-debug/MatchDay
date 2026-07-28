@@ -3,7 +3,7 @@
 A professional full-stack football ticket booking platform built with Flask REST API, React and PostgreSQL.
 
 ## 🚀 Live Demo
-> API Docs: Coming soon (Render deployment)
+> API Docs: https://matchday-2.onrender.com/apidocs
 > Frontend: Coming soon (Vercel deployment)
 
 ## 🛠️ Tech Stack

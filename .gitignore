@@ -6,3 +6,4 @@ __pycache__/
 static/qrcodes/
 frontend/node_modules/
 frontend/build/
+.vscode/

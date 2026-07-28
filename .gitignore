@@ -1,0 +1,8 @@
+matchday_env/
+__pycache__/
+*.pyc
+.env
+*.db
+static/qrcodes/
+frontend/node_modules/
+frontend/build/

@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: matchday
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres123@db:5432/matchday
+      SECRET_KEY: matchday-secret-key
+      JWT_SECRET_KEY: matchday-jwt-secret
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

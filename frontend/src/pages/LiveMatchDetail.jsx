@@ -29,7 +29,8 @@ export default function LiveMatchDetail() {
     return () => {
       clearInterval(intervalRef.current);
     };
-  }, [matchId]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [matchId]);
 
   const fetchMatchDetails = async () => {
     try {

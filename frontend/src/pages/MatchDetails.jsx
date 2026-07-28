@@ -14,8 +14,9 @@ export default function MatchDetails() {
   const { matchId } = useParams();
   const navigate = useNavigate();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    fetchMatch();
+  fetchMatch();
   }, [matchId]);
 
   const fetchMatch = async () => {

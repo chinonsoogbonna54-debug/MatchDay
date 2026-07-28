@@ -5,7 +5,6 @@ import API from '../api/axios';
 
 export default function AdminDashboard() {
   const [matches, setMatches] = useState([]);
-  const [clubs, setClubs] = useState([]);
   const [sales, setSales] = useState([]);
   const [activeTab, setActiveTab] = useState('matches');
   const [loading, setLoading] = useState(true);
@@ -22,7 +21,7 @@ export default function AdminDashboard() {
   const [matchForm, setMatchForm] = useState({ home_club_id: '', away_club_id: '', stadium_id: '', date: '', season: '' });
 
   // Stadiums list
-  const [stadiums, setStadiums] = useState([]);
+ 
 
   // Goal form
   const [goalForm, setGoalForm] = useState({ match_id: '', scorer: '', minute: '', team: 'home' });

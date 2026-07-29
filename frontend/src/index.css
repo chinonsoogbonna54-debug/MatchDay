@@ -492,3 +492,68 @@ select.input-field option { background: #111111; color: white; }
   color: #ef4444;
   animation: pulse-gold 1.5s ease infinite;
 }
+
+
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  /* Match Card */
+  .match-card {
+    padding: 16px;
+  }
+
+  .vs-text {
+    font-size: 16px;
+  }
+
+  /* Section Card */
+  .section-card {
+    padding: 14px;
+  }
+
+  /* Buttons */
+  .btn-gold, .btn-outline {
+    font-size: 13px;
+    padding: 11px 18px;
+  }
+
+  /* Goal Notification */
+  .goal-notification {
+    min-width: unset;
+    width: 90%;
+    left: 5%;
+    transform: none;
+  }
+
+  .goal-title {
+    font-size: 24px;
+  }
+
+  .goal-icon {
+    font-size: 36px;
+  }
+
+  /* Payment Success */
+  .payment-success-card {
+    padding: 32px 20px;
+  }
+
+  .success-title {
+    font-size: 36px;
+  }
+
+  .success-icon {
+    font-size: 60px;
+  }
+}

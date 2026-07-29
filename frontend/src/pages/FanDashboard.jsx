@@ -175,7 +175,7 @@ const fetchData = async () => {
               <p style={{ fontWeight: '700', fontSize: '15px' }}>{match.home_team}</p>
             </div>
             <div style={{ textAlign: 'center', padding: '0 24px' }}>
-              <p className="bebas gold-text" style={{ fontSize: '32px', letterSpacing: '4px' }}>
+             <p className="bebas gold-text" style={{ fontSize: 'clamp(20px, 5vw, 32px)', letterSpacing: '4px' }}>
                 {match.home_score ?? 0} - {match.away_score ?? 0}
               </p>
               <span className="badge badge-live" style={{ fontSize: '11px' }}>🔴 LIVE</span>
@@ -207,7 +207,7 @@ const fetchData = async () => {
               <p style={{ fontWeight: '700', fontSize: '15px' }}>{match.home_team}</p>
             </div>
             <div style={{ textAlign: 'center', padding: '0 24px' }}>
-              <p className="bebas gold-text" style={{ fontSize: '28px', letterSpacing: '4px' }}>
+              <p className="bebas gold-text" style={{ fontSize: 'clamp(18px, 4vw, 28px)', letterSpacing: '4px' }}>
                 {match.home_score ?? '-'} - {match.away_score ?? '-'}
               </p>
               <span className="badge" style={{ fontSize: '11px' }}>
@@ -246,7 +246,7 @@ const fetchData = async () => {
           ) : (
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
               gap: '20px'
             }}>
               {matches.map(match => (

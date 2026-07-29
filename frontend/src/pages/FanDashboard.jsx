@@ -115,7 +115,7 @@ const fetchData = async () => {
 
         {/* Header */}
         <div style={{ marginBottom: '48px' }} className="fade-in">
-          <h1 className="bebas" style={{ fontSize: '56px', letterSpacing: '4px', lineHeight: 1 }}>
+         <h1 className="bebas" style={{ fontSize: 'clamp(28px, 8vw, 56px)', letterSpacing: '2px', lineHeight: 1.1 }}>
             WELCOME BACK, <span className="gold-text">{user?.firstname?.toUpperCase()}!</span>
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '16px', marginTop: '8px' }}>
@@ -167,28 +167,34 @@ const fetchData = async () => {
       🔴 LIVE SCORES
     </h2>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-     {liveMatches.map(match => (
-  <div key={match.id} className="gold-card" style={{ padding: '20px', cursor: 'pointer' }}
+    {liveMatches.map(match => (
+  <div key={match.id} className="gold-card" style={{ padding: '16px', cursor: 'pointer' }}
     onClick={() => navigate(`/live/${match.id}`)}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ flex: 1, textAlign: 'center' }}>
-              <p style={{ fontWeight: '700', fontSize: '15px' }}>{match.home_team}</p>
-            </div>
-            <div style={{ textAlign: 'center', padding: '0 24px' }}>
-             <p className="bebas gold-text" style={{ fontSize: 'clamp(20px, 5vw, 32px)', letterSpacing: '4px' }}>
-                {match.home_score ?? 0} - {match.away_score ?? 0}
-              </p>
-              <span className="badge badge-live" style={{ fontSize: '11px' }}>🔴 LIVE</span>
-            </div>
-            <div style={{ flex: 1, textAlign: 'center' }}>
-              <p style={{ fontWeight: '700', fontSize: '15px' }}>{match.away_team}</p>
-            </div>
-          </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
-            {match.competition}
-          </p>
-        </div>
-      ))}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ flex: 1, textAlign: 'center' }}>
+        <p style={{ fontWeight: '700', fontSize: 'clamp(11px, 3vw, 15px)', wordBreak: 'break-word' }}>
+          {match.home_team}
+        </p>
+      </div>
+      <div style={{ textAlign: 'center', minWidth: '80px' }}>
+        <p className="bebas gold-text" style={{ fontSize: 'clamp(16px, 4vw, 28px)', letterSpacing: '2px' }}>
+          {match.home_score ?? 0} - {match.away_score ?? 0}
+        </p>
+        <span className="badge badge-live" style={{ fontSize: '10px', display: 'block', marginTop: '2px' }}>
+          🔴 LIVE
+        </span>
+      </div>
+      <div style={{ flex: 1, textAlign: 'center' }}>
+        <p style={{ fontWeight: '700', fontSize: 'clamp(11px, 3vw, 15px)', wordBreak: 'break-word' }}>
+          {match.away_team}
+        </p>
+      </div>
+    </div>
+    <p style={{ textAlign: 'center', fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
+      {match.competition}
+    </p>
+  </div>
+))}
     </div>
   </div>
 )}
@@ -200,29 +206,33 @@ const fetchData = async () => {
       📅 TODAY'S MATCHES
     </h2>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-      {todayMatches.map(match => (
-        <div key={match.id} className="gold-card" style={{ padding: '20px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ flex: 1, textAlign: 'center' }}>
-              <p style={{ fontWeight: '700', fontSize: '15px' }}>{match.home_team}</p>
-            </div>
-            <div style={{ textAlign: 'center', padding: '0 24px' }}>
-              <p className="bebas gold-text" style={{ fontSize: 'clamp(18px, 4vw, 28px)', letterSpacing: '4px' }}>
-                {match.home_score ?? '-'} - {match.away_score ?? '-'}
-              </p>
-              <span className="badge" style={{ fontSize: '11px' }}>
-                {match.status === 'FINISHED' ? '✅ FT' : match.status === 'IN_PLAY' ? '🔴 LIVE' : '🗓 ' + new Date(match.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
-              </span>
-            </div>
-            <div style={{ flex: 1, textAlign: 'center' }}>
-              <p style={{ fontWeight: '700', fontSize: '15px' }}>{match.away_team}</p>
-            </div>
-          </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
-            {match.competition}
-          </p>
-        </div>
-      ))}
+     {todayMatches.map(match => (
+  <div key={match.id} className="gold-card" style={{ padding: '16px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ flex: 1, textAlign: 'center' }}>
+        <p style={{ fontWeight: '700', fontSize: 'clamp(11px, 3vw, 15px)', wordBreak: 'break-word' }}>
+          {match.home_team}
+        </p>
+      </div>
+      <div style={{ textAlign: 'center', minWidth: '80px' }}>
+        <p className="bebas gold-text" style={{ fontSize: 'clamp(16px, 4vw, 28px)', letterSpacing: '2px' }}>
+          {match.home_score ?? '-'} - {match.away_score ?? '-'}
+        </p>
+        <span className="badge" style={{ fontSize: '10px', display: 'block', marginTop: '2px' }}>
+          {match.status === 'FINISHED' ? '✅ FT' : match.status === 'IN_PLAY' ? '🔴 LIVE' : '🗓 ' + new Date(match.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+        </span>
+      </div>
+      <div style={{ flex: 1, textAlign: 'center' }}>
+        <p style={{ fontWeight: '700', fontSize: 'clamp(11px, 3vw, 15px)', wordBreak: 'break-word' }}>
+          {match.away_team}
+        </p>
+      </div>
+    </div>
+    <p style={{ textAlign: 'center', fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
+      {match.competition}
+    </p>
+  </div>
+))}
     </div>
   </div>
 )}

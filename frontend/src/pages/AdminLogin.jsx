@@ -118,6 +118,13 @@ export default function AdminLogin() {
           <a href="/login" style={{ color: '#FFD700', textDecoration: 'none' }}>Go to fan login →</a>
         </p>
       </div>
+
+      <p style={{ textAlign: 'center', marginTop: '20px', color: 'rgba(255,255,255,0.2)', fontSize: '12px' }}>
+  Are you a fan?{' '}
+  <a href="/login" style={{ color: '#FFD700', textDecoration: 'none' }}>Fan login →</a>
+  {' | '}
+  <a href="/admin/signup" style={{ color: '#FFD700', textDecoration: 'none' }}>Register admin →</a>
+      </p>
     </div>
   );
 }

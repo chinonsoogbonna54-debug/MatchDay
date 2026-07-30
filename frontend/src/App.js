@@ -12,6 +12,7 @@ import ResetPassword from './pages/ResetPassword';
 import ForgotPassword from './pages/ForgotPassword';
 import MyClubs from './pages/MyClubs';
 import LiveMatchDetail from './pages/LiveMatchDetail';
+import AdminSignup from './pages/AdminSignup';
 import './App.css';
 
 const ProtectedRoute = ({ children, requiredRole }) => {
@@ -64,6 +65,8 @@ function AppRoutes() {
           <LiveMatchDetail />
         </ProtectedRoute>
       } />
+
+      <Route path="/admin/signup" element={<AdminSignup />} />
 
     </Routes>
   );

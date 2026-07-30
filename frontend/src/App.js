@@ -31,6 +31,7 @@ function AppRoutes() {
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/login" element={<Login />} />
       <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/signup" element={<AdminSignup />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -65,8 +66,6 @@ function AppRoutes() {
           <LiveMatchDetail />
         </ProtectedRoute>
       } />
-
-      <Route path="/admin/signup" element={<AdminSignup />} />
 
     </Routes>
   );

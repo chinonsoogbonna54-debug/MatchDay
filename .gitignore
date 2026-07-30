@@ -7,3 +7,5 @@ static/qrcodes/
 frontend/node_modules/
 frontend/build/
 .vscode/
+.vercel
+.env*

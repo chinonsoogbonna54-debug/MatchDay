@@ -165,7 +165,7 @@ export default function MatchDetails() {
               <span className={`badge ${match.status === 'live' ? 'badge-live' : ''}`} style={{ marginBottom: '24px', display: 'inline-block' }}>
                 {match.status === 'live' ? '🔴 LIVE' : match.status === 'upcoming' ? '🗓 UPCOMING' : '✅ FINISHED'}
               </span>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(10px, 4vw, 40px)', flexWrap: 'wrap' }}>
                 <div style={{ textAlign: 'center' }}>
                   {match.home_club.logo_url && (
                     <img src={match.home_club.logo_url} alt={match.home_club.name}
@@ -176,7 +176,7 @@ export default function MatchDetails() {
                   <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>{match.home_club.country}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div className="bebas gold-text" style={{ fontSize: '64px', letterSpacing: '8px', lineHeight: 1 }}>
+                  <div className="bebas gold-text" style={{ fontSize: 'clamp(32px, 8vw, 64px)', letterSpacing: '8px', lineHeight: 1 }}>
                     {match.home_score} - {match.away_score}
                   </div>
                   <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>
@@ -203,7 +203,7 @@ export default function MatchDetails() {
                 <h2 className="bebas" style={{ fontSize: '28px', letterSpacing: '3px', marginBottom: '20px' }}>
                   🎟️ SELECT YOUR SECTION
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px', marginBottom: '32px' }}>
                   {sections.map(section => (
                     <div key={section.id}
                       className={`section-card ${selectedSection?.id === section.id ? 'selected' : ''} ${section.available_seats === 0 ? 'sold-out' : ''}`}

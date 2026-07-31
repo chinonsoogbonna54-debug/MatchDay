@@ -34,7 +34,7 @@ export default function AdminLogin() {
 
       {/* Background Video */}
       <video className="video-bg" autoPlay muted loop playsInline>
-       <source src="/videos/football.mp4" type="video/mp4" />
+      <source src="/videos/football.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay" />
 
